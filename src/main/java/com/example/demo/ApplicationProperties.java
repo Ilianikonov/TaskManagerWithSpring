@@ -1,12 +1,15 @@
 package com.example.demo;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 
 @Component
+@Slf4j
 public class ApplicationProperties {
 
     //@Value("${application.manager.type}")
@@ -24,8 +27,9 @@ public class ApplicationProperties {
     }
     @PostConstruct
     public void init(){
-        System.out.println(this);
+        log.info(toString());
     }
+
     public String getManagerType() {
         return managerType;
     }
