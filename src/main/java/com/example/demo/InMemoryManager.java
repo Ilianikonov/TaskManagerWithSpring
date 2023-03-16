@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +19,12 @@ public class InMemoryManager extends Manager {
         if (applicationProperties.getManagerLoggingEnable()){
             System.out.println("логирование включкно!");
         }
+        Task task = new Task(14,"hkrmhk", "eageg", Status.NEW);
+        Task task2 = new Task(13,"hkr124mhk", "eag124eg", Status.DONE);
+        Task task3 = new Task(15,"hkr24mhk", "ea124geg", Status.IN_PROGRESS);
+        addTask(task);
+        addTask(task2);
+        addTask(task3);
     }
 
     @Override

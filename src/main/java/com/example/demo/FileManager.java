@@ -1,6 +1,7 @@
 package com.example.demo;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 @Service
 @ConditionalOnProperty(name = "application.manager.type", havingValue = "FileManager")
 public class FileManager extends Manager {
+
 
     public Task toTask(String line) {
         String[] arrayline = line.split("////");
